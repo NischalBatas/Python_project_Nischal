@@ -1,0 +1,18 @@
+{% extends "index.html"%}
+
+{%block content%}
+    <form action="register" method="POST">
+        {%csrf_token%}
+        <input type="text" name="fname" placeholder="firstname"><br>
+        <input type="text" name="lastname" placeholder="lastname"><br>
+        <input type="text" name="uname" placeholder="username"><br>
+        <input type="password" name="password" placeholder="password"><br>
+        <input type="password" name="cpassword" placeholder="cpassword"><br>
+        <input type="email" name="email" placeholder="email"><br>
+        <input type="submit">
+    </form>
+
+    {% for alert in messages%}
+    <h2>{{alert}}</h2>
+    {%endfor%}
+{%endblock%}
